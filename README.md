@@ -14,4 +14,29 @@ Exploratory analyses using sterol and cytokine data prior to ozone exposure to p
 
 All analyses in this respository are designated by their figure number or table number in the manuscript in parantheses. In the instance that the files are unable to rendered the NBViewer link can be viewed [here](https://nbviewer.org/github/UNC-CEMALB/Ozone-exposure-is-associated-with-alterations-in-lung-and-systemic-sterol-profiles-in-healthy-and-as/tree/main/).
 
+<br>
+
+# 1. Data imputation
+Random Forest (RF) and the Quantile Regression Imputation of Left-Censored data (QRILC) method imputation on lung function data on cell differential, sterol, and cytokine data. Imputation was run within time points, sample types, and categories.
+- Predictors and subjects were filtered for at least a 25% presence within aformentioned strata.
+- Values were normalized (log 10) prior to imputing and converted back to their original scales.
+
+# 2. Responder Prediction
+- Inflammatory and Lung Response Prediction (Table 6 & Table S3-S5)
+  - Using the supervised machine learning method, random forest (RF), support vector machine (SVM), or K Nearest Neighbor (KNN) to predict inflammatory or lung response class (non-responder or responder) based on sterol and cytokine concentrations derived from plasma prior to ozone exposure
+  - Variable importance rankings were extracted from RF models
+
+# 3. ML Visualisations
+- Confusion Matrix Figure (Figure 5)
+  - Visualization of confusion matrix metrics from all supervised machine learning models tested (KNN, SVM, and RF)
+- Decision Boundary Plot (Figure 6)
+  - Visualization of two of the most significant predictors in lung response RF models (ie. Chol and Vitamin D) to determine how well those variables could predict lung response status
+- Variable Importance Plot (not in manuscript)
+  - Shows the top predictors in random forest models relative to random noise
+ 
+# 4. Oxysterol Correlation
+- Correlogram for Baseline Sterols and Post Exposure Sputum Endpoints (Figure 6)
+  - Running spearman correlations to determine if there are associations between sterol plasma samples prior to ozone exposure and cytokine sputum samples after ozone exposure
+  - This same analysis was further stratified by disease status
+
 
